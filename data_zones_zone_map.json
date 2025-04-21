@@ -1,1 +1,54 @@
 
+
+# zone_loader.py
+
+class ZoneLoader:
+    def __init__(self):
+        self.zones = {
+            "tutorial_entrance": {
+                "description": "You awaken in a strange cavern where echoes whisper your name. There’s a faint light to the north.",
+                "exits": {"north": "shattered_path"},
+                "items": ["cracked stone tablet"]
+            },
+            "shattered_path": {
+                "description": "Fragments of old runes glow softly beneath your feet. A gust of wind howls from the east.",
+                "exits": {"south": "tutorial_entrance", "east": "glyph_wall"},
+                "items": []
+            },
+            "glyph_wall": {
+                "description": "A massive wall covered in ancient glyphs blocks your way. One glyph faintly pulses.",
+                "exits": {"west": "shattered_path"},
+                "items": ["fragmented glyph shard"]
+            }
+        }
+
+    def load_zone(self, key):
+        return self.zones.get(key, {"description": "Void. Nothing exists here."})
+
+
+// data/zones/zone_map.json
+{
+  "tutorial_entrance": {
+    "description": "You awaken in a broken crypt. Echoes follow your every move.",
+    "exits": {
+      "north": "shattered_path"
+    },
+    "items": ["forgotten relic"]
+  },
+  "shattered_path": {
+    "description": "Bones and glass litter the path. Something watches from the mist.",
+    "exits": {
+      "south": "tutorial_entrance",
+      "east": "glyph_wall"
+    },
+    "items": []
+  }
+}
+
+
+
+Sample NPC Memory Save:
+// data/npcs/npc_memory_example.json
+{
+
+  
