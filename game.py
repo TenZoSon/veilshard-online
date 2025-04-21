@@ -183,6 +183,27 @@ class ZoneLoader:
 
     def load_zone(self, key):
         return self.zones.get(key, {"description": "Void. Nothing exists here."})
+
+// data/zones/zone_map.json
+{
+  "tutorial_entrance": {
+    "description": "You awaken in a broken crypt. Echoes follow your every move.",
+    "exits": {
+      "north": "shattered_path"
+    },
+    "items": ["forgotten relic"]
+  },
+  "shattered_path": {
+    "description": "Bones and glass litter the path. Something watches from the mist.",
+    "exits": {
+      "south": "tutorial_entrance",
+      "east": "glyph_wall"
+    },
+    "items": []
+  }
+}
+
+
 # factions/faction_system.py
 
 class Faction:
