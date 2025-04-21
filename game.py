@@ -158,6 +158,33 @@ class Journal:
             for i, entry in enumerate(self.entries[entry_type], 1):
                 print(f"{i}. {entry}")
 
+
+// data/zones/zone_map.json
+{
+  "tutorial_entrance": {
+    "description": "You awaken in a broken crypt. Echoes follow your every move.",
+    "exits": {
+      "north": "shattered_path"
+    },
+    "items": ["forgotten relic"]
+  },
+  "shattered_path": {
+    "description": "Bones and glass litter the path. Something watches from the mist.",
+    "exits": {
+      "south": "tutorial_entrance",
+      "east": "glyph_wall"
+    },
+    "items": []
+  }
+}
+
+
+
+Sample NPC Memory Save:
+// data/npcs/npc_memory_example.json
+{
+
+
 # zone_loader.py
 
 class ZoneLoader:
@@ -208,3 +235,6 @@ class Faction:
 
     def show_status(self):
         return f"{self.name} Rep: {self.reputation} ({self.rank})"
+
+
+
